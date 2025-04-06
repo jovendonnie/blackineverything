@@ -78,7 +78,8 @@
   
   .hero {
     height: 100vh;
-    background: url('./images/BLACKINEVERYTHING.png') no-repeat center center/cover;
+/*     background: url('./images/BLACKINEVERYTHING.png') no-repeat center center/cover; */
+    background: url('/blackineverything/images/BLACKINEVERYTHING.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
