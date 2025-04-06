@@ -1,0 +1,440 @@
+/* Tipografías para que tú las reemplaces */
+:root {
+    --font-title: 'anton', sans-serif;
+    --font-nav: 'antonim', sans-serif;
+    --font-body: 'Horizon', sans-serif;
+  }
+  
+  @font-face {
+    font-family: 'Horizon';
+    src: url('fonts/Horizon-Font.zip') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: var(--font-body);
+  }
+  
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: white;
+  }
+  
+  header.scrolled {
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: black;
+  }
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-family: var(--font-nav);
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: white;
+  }
+  .navbar .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Horizon', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+  
+  .hero {
+    height: 100vh;
+    background: url('../PAGE/images/BLACKINEVERYTHING.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.37);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    font-family: var(--font-title);
+    line-height: 1.2;
+  }
+  
+  .hero-content h1 span {
+    display: block;
+  }
+  
+  .hero-content .italic {
+    font-style: italic;
+  }
+  
+  .hero-content .bold {
+    font-weight: 900;
+  }
+  
+  .content {
+    padding: 100px 40px;
+    background: white;
+  }
+  .announcement-bar {
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: 'Horizon', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+  
+  .announcement-bar.hidden {
+    transform: translateY(-100%);
+  }
+  
+  .announcement-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll-left 15s linear infinite;
+    user-select: none;
+  }
+  
+  .announcement-bar:hover .announcement-text {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .product-carousel {
+    padding: 80px 40px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  .product-carousel h2 {
+    font-family: 'Horizon', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 30px;
+    animation: scrollCarousel 60s linear infinite;
+  }
+  
+  .product-card {
+  min-width: 400px;
+  max-width: 400px;
+  flex-shrink: 0;
+  background: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain; 
+  border-radius: 5px;
+  border-radius: 50px;
+}
+  .product-info h3 {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+    color: black;
+  }
+  
+  .product-info .price {
+    font-size: 0.9rem;
+    color: black;
+    margin-bottom: 5px;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .tag.new {
+    border-color: black;
+  }
+  
+  .tag.restock {
+    border-color: gray;
+  }
+  
+  .tag.few {
+    border-color: rgb(0, 0, 0);
+  }
+  
+  @keyframes scrollCarousel {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* o el alto que quieras */
+    overflow: hidden;
+  }
+  
+  .video-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
+  .reference-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff; /* o el color que quieras */
+  }
+  
+  .reference-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Horizon', sans-serif; /* usa tu fuente */
+    margin-bottom: 40px;
+  }
+  
+  .reference-carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 60s linear infinite;
+    width: max-content;
+  }
+  
+  .carousel-track img {
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .faq-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .faq-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: left;
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    color: #444;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0;
+  }
+  
+  .faq-answer.open {
+    padding: 0.5rem 0;
+  }
+  .faq-answer p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .bie-footer {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Horizon', sans-serif;
+    padding: 60px 30px;
+  }
+  
+  .bie-top {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .bie-top h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .bie-logos img {
+    height: 30px;
+    margin: 0 10px;
+    opacity: 0.8;
+  }
+  
+  .bie-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .bie-column h4 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .bie-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bie-column li {
+    margin-bottom: 8px;
+  }
+  
+  .bie-column a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+  }
+  
+  .bie-column form {
+    display: flex;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+  
+  .bie-column input[type="email"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .bie-column button {
+    padding: 8px 12px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .bie-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  .bie-country-lang span {
+    margin-right: 15px;
+  }
+  
+  .bie-payments img {
+    height: 24px;
+    margin-left: 8px;
+  }
+
