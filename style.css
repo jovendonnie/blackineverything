@@ -175,11 +175,50 @@
     color: black;
   }
   
-  .carousel-track {
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  
+  .carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .arrow-left {
+    left: 10px;
+  }
+  
+  .arrow-right {
+    right: 10px;
+  }
+  
+  .product-carousel {
+    position: relative;
+  }
+  
+  .carousel-product {
     display: flex;
     gap: 30px;
-    animation: scrollCarousel 60s linear infinite;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
+  
+  
+  .carousel-product::-webkit-scrollbar {
+    display: none;
+  }
+
   
   .product-card {
   min-width: 400px;
@@ -198,7 +237,7 @@
   height: 500px;
   object-fit: contain; 
   border-radius: 5px;
-  border-radius: 50px;
+  border-radius: 20px;
 }
   .product-info h3 {
     font-size: 1rem;
