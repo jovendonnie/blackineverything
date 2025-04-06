@@ -37,7 +37,7 @@
   </section>
   <section class="product-carousel">
     <h2></h2>
-    <div class="carousel-track" id="carouselTrack">
+    <div class="carousel-product" id="carouselTrack">
       
       <div class="product-card">
         <a href="PRODUCT PAGE/Index.html">
@@ -251,6 +251,51 @@
       <div class="bie-copy">&copy; 2025 BLACK IN EVERYTHING</div>
     </div>
   </footer>
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const leftBtn = document.querySelector('.arrow-left');
+    const rightBtn = document.querySelector('.arrow-right');
+  
+    const scrollAmount = 400; // Ajusta si quieres que se mueva más o menos
+  
+    leftBtn.addEventListener('click', () => {
+      track.scrollLeft -= scrollAmount;
+    });
+  
+    rightBtn.addEventListener('click', () => {
+      track.scrollLeft += scrollAmount;
+    });
+  
+    // Arrastrar con clic para mover (drag to scroll)
+    let isDown = false;
+    let startX;
+    let scrollLeftStart;
+  
+    track.addEventListener('mousedown', (e) => {
+      isDown = true;
+      track.classList.add('dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeftStart = track.scrollLeft;
+    });
+  
+    track.addEventListener('mouseleave', () => {
+      isDown = false;
+      track.classList.remove('dragging');
+    });
+  
+    track.addEventListener('mouseup', () => {
+      isDown = false;
+      track.classList.remove('dragging');
+    });
+  
+    track.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 2; // velocidad
+      track.scrollLeft = scrollLeftStart - walk;
+    });
+  </script>
   <script>
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
