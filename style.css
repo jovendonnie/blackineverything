@@ -1,3 +1,8 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
 /* Tipografías para que tú las reemplaces */
 :root {
     --font-title: 'anton', sans-serif;
